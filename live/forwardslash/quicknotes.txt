@@ -1,0 +1,8 @@
+gobuster dir --url 10.10.10.183 --wordlist /usr/share/wordlists/dirb/big.txt
+
+gobuster
+wfuzz
+
+wfuzz -w /usr/share/wordlists/wfuzz/general/big.txt --sc 200 http://10.10.10.183/FUZZ.php
+
+

@@ -1,0 +1,9 @@
+# Nmap 7.80 scan initiated Tue Apr 21 14:16:08 2020 as: nmap -F -oN nmap/quick 10.10.10.183
+Nmap scan report for forwardslash.htb (10.10.10.183)
+Host is up (0.12s latency).
+Not shown: 98 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+# Nmap done at Tue Apr 21 14:16:10 2020 -- 1 IP address (1 host up) scanned in 1.75 seconds

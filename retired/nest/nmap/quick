@@ -1,0 +1,8 @@
+# Nmap 7.80 scan initiated Tue Apr 14 20:07:44 2020 as: nmap -F -oN nmap/quick 10.10.10.178
+Nmap scan report for 10.10.10.178
+Host is up (0.12s latency).
+Not shown: 99 filtered ports
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+# Nmap done at Tue Apr 14 20:07:49 2020 -- 1 IP address (1 host up) scanned in 5.67 seconds
