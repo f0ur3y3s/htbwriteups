@@ -1,0 +1,26 @@
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.10.194:8080
+[+] Threads:        10
+[+] Wordlist:       /root/SecLists/Discovery/Web-Content/ApacheTomcat.fuzz.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2020/06/20 16:02:51 Starting gobuster
+===============================================================
+//examples/jsp/index.html (Status: 200)
+//examples (Status: 302)
+//examples/jsp/snp/snoop.jsp (Status: 200)
+//manager (Status: 302)
+//examples/servlets/index.html (Status: 200)
+//manager/html/ (Status: 401)
+//manager/html (Status: 401)
+//manager/text (Status: 401)
+//manager/jmxproxy (Status: 401)
+//manager/status (Status: 401)
+===============================================================
+2020/06/20 16:02:56 Finished
+===============================================================

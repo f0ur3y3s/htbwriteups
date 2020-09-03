@@ -1,0 +1,144 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-25 11:24 EDT
+Nmap scan report for BLACKFIELD.local (10.10.10.192)
+Host is up (0.19s latency).
+Not shown: 993 filtered ports
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2020-06-25 22:30:01Z)
+| vulscan: VulDB - https://vuldb.com:
+| No findings
+| 
+| MITRE CVE - https://cve.mitre.org:
+| No findings
+| 
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| No findings
+| 
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| No findings
+| 
+| Exploit-DB - https://www.exploit-db.com:
+| No findings
+| 
+| OpenVAS (Nessus) - http://www.openvas.org:
+| No findings
+| 
+| SecurityTracker - https://www.securitytracker.com:
+| No findings
+| 
+| OSVDB - http://www.osvdb.org:
+| No findings
+|_
+135/tcp  open  msrpc         Microsoft Windows RPC
+| vulscan: VulDB - https://vuldb.com:
+| No findings
+| 
+| MITRE CVE - https://cve.mitre.org:
+| No findings
+| 
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| No findings
+| 
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| No findings
+| 
+| Exploit-DB - https://www.exploit-db.com:
+| No findings
+| 
+| OpenVAS (Nessus) - http://www.openvas.org:
+| No findings
+| 
+| SecurityTracker - https://www.securitytracker.com:
+| No findings
+| 
+| OSVDB - http://www.osvdb.org:
+| No findings
+|_
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: BLACKFIELD.local0., Site: Default-First-Site-Name)
+| vulscan: VulDB - https://vuldb.com:
+| No findings
+| 
+| MITRE CVE - https://cve.mitre.org:
+| No findings
+| 
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| No findings
+| 
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| No findings
+| 
+| Exploit-DB - https://www.exploit-db.com:
+| No findings
+| 
+| OpenVAS (Nessus) - http://www.openvas.org:
+| No findings
+| 
+| SecurityTracker - https://www.securitytracker.com:
+| No findings
+| 
+| OSVDB - http://www.osvdb.org:
+| No findings
+|_
+445/tcp  open  microsoft-ds?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+| vulscan: VulDB - https://vuldb.com:
+| No findings
+| 
+| MITRE CVE - https://cve.mitre.org:
+| No findings
+| 
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| No findings
+| 
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| No findings
+| 
+| Exploit-DB - https://www.exploit-db.com:
+| No findings
+| 
+| OpenVAS (Nessus) - http://www.openvas.org:
+| No findings
+| 
+| SecurityTracker - https://www.securitytracker.com:
+| No findings
+| 
+| OSVDB - http://www.osvdb.org:
+| No findings
+|_
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: BLACKFIELD.local0., Site: Default-First-Site-Name)
+| vulscan: VulDB - https://vuldb.com:
+| No findings
+| 
+| MITRE CVE - https://cve.mitre.org:
+| No findings
+| 
+| SecurityFocus - https://www.securityfocus.com/bid/:
+| No findings
+| 
+| IBM X-Force - https://exchange.xforce.ibmcloud.com:
+| No findings
+| 
+| Exploit-DB - https://www.exploit-db.com:
+| No findings
+| 
+| OpenVAS (Nessus) - http://www.openvas.org:
+| No findings
+| 
+| SecurityTracker - https://www.securitytracker.com:
+| No findings
+| 
+| OSVDB - http://www.osvdb.org:
+| No findings
+|_
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=6/25%Time=5EF4C1EB%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 194.85 seconds

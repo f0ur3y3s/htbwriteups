@@ -1,0 +1,75 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-13 16:09 EDT
+Stats: 0:01:02 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 30.50% done; ETC: 16:12 (0:02:21 remaining)
+Nmap scan report for 10.10.10.193
+Host is up (0.28s latency).
+Not shown: 995 filtered ports
+PORT     STATE SERVICE      VERSION
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2020-06-13 20:23:55Z)
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: fabricorp.local, Site: Default-First-Site-Name)
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: fabricorp.local, Site: Default-First-Site-Name)
+Service Info: Host: FUSE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 241.06 secondsfif
+
+
+nmap -Pn -A -v 10.10.10.193
+
+Nmap scan report for 10.10.10.193
+Host is up (0.25s latency).
+Not shown: 988 filtered ports
+PORT     STATE SERVICE      VERSION
+53/tcp   open  domain?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+80/tcp   open  http         Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2020-06-13 20:43:11Z)
+135/tcp  open  msrpc        Microsoft Windows RPC
+139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: fabricorp.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds (workgroup: FABRICORP)
+464/tcp  open  kpasswd5?            part of kerberos-sec
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped           nothing to bypass
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: fabricorp.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped           nothing to bypass
+
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=6/13%Time=5EE53757%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized|WAP|phone
+Running: iPXE 1.X, Linux 2.4.X|2.6.X, Sony Ericsson embedded
+OS CPE: cpe:/o:ipxe:ipxe:1.0.0%2b cpe:/o:linux:linux_kernel:2.4.20 cpe:/o:linux:linux_kernel:2.6.22 cpe:/h:sonyericsson:u8i_vivaz
+OS details: iPXE 1.0.0+, Tomato 1.28 (Linux 2.4.20), Tomato firmware (Linux 2.6.22), Sony Ericsson U8i Vivaz mobile phone
+Service Info: Host: FUSE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.02: 
+|_    Message signing enabled and required
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE (using port 139/tcp)
+HOP RTT    ADDRESS
+1   ... 30
+
+NSE: Script Post-scanning.
+Initiating NSE at 16:36
+Completed NSE at 16:36, 0.00s elapsed
+Initiating NSE at 16:36
+Completed NSE at 16:36, 0.00s elapsed
+Initiating NSE at 16:36
+Completed NSE at 16:36, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 416.83 seconds
+           Raw packets sent: 2160 (98.048KB) | Rcvd: 20 (880B)

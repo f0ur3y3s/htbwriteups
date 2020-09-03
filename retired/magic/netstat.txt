@@ -1,0 +1,66 @@
+bash: no job control in this shell
+www-data@ubuntu:/var/www/Magic/images/uploads$ netstat -l
+netstat -l
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 localhost:mysql         0.0.0.0:*               LISTEN     
+tcp        0      0 localhost:domain        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:ssh             0.0.0.0:*               LISTEN     
+tcp        0      0 localhost:ipp           0.0.0.0:*               LISTEN     
+tcp6       0      0 [::]:http               [::]:*                  LISTEN     
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN     
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN     
+udp        0      0 localhost:domain        0.0.0.0:*                          
+udp        0      0 0.0.0.0:33231           0.0.0.0:*                          
+udp        0      0 0.0.0.0:ipp             0.0.0.0:*                          
+udp        0      0 0.0.0.0:mdns            0.0.0.0:*                          
+udp6       0      0 [::]:41986              [::]:*                             
+udp6       0      0 [::]:mdns               [::]:*                             
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     13104    /run/systemd/fsck.progress
+unix  2      [ ACC ]     SEQPACKET  LISTENING     13096    /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     29203    /run/user/1000/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     23936    /run/user/121/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     29207    /run/user/1000/gnupg/S.gpg-agent.ssh
+unix  2      [ ACC ]     STREAM     LISTENING     23996    @/tmp/.ICE-unix/1211
+unix  2      [ ACC ]     STREAM     LISTENING     23502    /run/user/121/snapd-session-agent.socket
+unix  2      [ ACC ]     STREAM     LISTENING     29208    /run/user/1000/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     23503    /run/user/121/gnupg/S.dirmngr
+unix  2      [ ACC ]     STREAM     LISTENING     29209    /run/user/1000/bus
+unix  2      [ ACC ]     STREAM     LISTENING     23504    /run/user/121/bus
+unix  2      [ ACC ]     STREAM     LISTENING     29210    /run/user/1000/snapd-session-agent.socket
+unix  2      [ ACC ]     STREAM     LISTENING     23505    /run/user/121/gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     27836    /run/user/1000/gnupg/S.dirmngr
+unix  2      [ ACC ]     STREAM     LISTENING     25121    @/tmp/dbus-UTuIj4hv
+unix  2      [ ACC ]     STREAM     LISTENING     23506    /run/user/121/gnupg/S.gpg-agent.browser
+unix  2      [ ACC ]     STREAM     LISTENING     27837    /run/user/1000/gnupg/S.gpg-agent.browser
+unix  2      [ ACC ]     STREAM     LISTENING     23507    /run/user/121/gnupg/S.gpg-agent.ssh
+unix  2      [ ACC ]     STREAM     LISTENING     27838    /run/user/1000/gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     23508    /run/user/121/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     23509    /run/user/121/pulse/native
+unix  2      [ ACC ]     STREAM     LISTENING     18315    @irqbalance554.sock
+unix  2      [ ACC ]     STREAM     LISTENING     24899    /run/user/121/wayland-0
+unix  2      [ ACC ]     STREAM     LISTENING     23126    @/tmp/dbus-T4FKsYgp
+unix  2      [ ACC ]     STREAM     LISTENING     23123    @/tmp/dbus-a05HhE6Q
+unix  2      [ ACC ]     STREAM     LISTENING     23997    /tmp/.ICE-unix/1211
+unix  2      [ ACC ]     STREAM     LISTENING     23125    @/tmp/dbus-ELTEp0vj
+unix  2      [ ACC ]     STREAM     LISTENING     16853    /run/avahi-daemon/socket
+unix  2      [ ACC ]     STREAM     LISTENING     16855    /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     16857    /run/snapd.socket
+unix  2      [ ACC ]     STREAM     LISTENING     16859    /run/snapd-snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     16861    /run/acpid.socket
+unix  2      [ ACC ]     STREAM     LISTENING     16873    /run/uuidd/request
+unix  2      [ ACC ]     STREAM     LISTENING     30013    /run/cups/cups.sock
+unix  2      [ ACC ]     STREAM     LISTENING     16906    /var/run/vmware/guestServicePipe
+unix  2      [ ACC ]     STREAM     LISTENING     24831    /tmp/.X11-unix/X1024
+unix  2      [ ACC ]     STREAM     LISTENING     23124    @/tmp/dbus-DsJwIRMH
+unix  2      [ ACC ]     STREAM     LISTENING     23955    /var/run/mysqld/mysqld.sock
+unix  2      [ ACC ]     STREAM     LISTENING     24830    @/tmp/.X11-unix/X1024
+unix  2      [ ACC ]     STREAM     LISTENING     24932    @/tmp/dbus-JuTfcAJ8Wj
+unix  2      [ ACC ]     STREAM     LISTENING     13074    /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     13084    /run/systemd/journal/stdout
+www-data@ubuntu:/var/www/Magic/images/uploads$ 
+
+
+netstat -tulpn

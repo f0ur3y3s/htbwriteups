@@ -1,0 +1,15 @@
+Nmap scan report for tabby.htb (10.10.10.194)
+Host is up (0.15s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+| http-methods: 
+|_  Supported Methods: OPTIONS
+|_http-title: Mega Hosting
+8080/tcp open  http-proxy
+| http-methods: 
+|_  Supported Methods: OPTIONS GET HEAD POST
+|_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Apache Tomcat
+

