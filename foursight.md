@@ -2,7 +2,7 @@
 
 `ps aux` - inspect processes
 inspect cronjobs
-try sudo 
+try `sudo -l`
 look at sudo privileges
 look at file privileges
 
@@ -24,6 +24,12 @@ evil-winrm
 enum4linux
 kerbrute
 impacket
+linPEAS --> upload to target machine with `python3 http.server 9876`
+```
+```
+rustscan --> nmap replacement
+feroxbuster --> gobuster replacement
+pwncat? --> netcat replacment
 ```
 
 
@@ -40,3 +46,8 @@ arbitrary file uploads
 open smb share
 sql injection
 dll hijacking
+ssti
+
+# resources
+
+https://github.com/swisskyrepo/PayloadsAllTheThings
